@@ -13,11 +13,10 @@ const startGame = async (chatId) => {
     await bot.sendMessage(chatId, 'Сейчас я загадаю цифру от 0 до 9, а ты должен его отгадать')
     const randomNumber = Math.floor(Math.random() * 10)
     chats[chatId] = randomNumber
-    await bot.sendMessage(chatId, `TEST: Бот загадал число ${randomNumber}`)
     await bot.sendMessage(chatId, 'Отгадывай', options.gameOptions)
 }
 
-const start = async() => {
+const start = async () => {
 
     try {
         await sequelize.authenticate()
